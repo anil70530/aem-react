@@ -16,7 +16,6 @@ const cartReducer = (state = initialState, action) => {
                 let res = state.addedItems.map(result => { return { ...result } });
                 let getIndex = res.findIndex(item => action['data'].id === item.id)
                 let quantity = action['data'].quantity+1;
-                debugger;
                 let itemList= {...state.addedItems[getIndex], quantity};
                 return {
                     ...state,
