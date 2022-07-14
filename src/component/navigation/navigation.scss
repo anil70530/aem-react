@@ -1,0 +1,94 @@
+@import "../../scss/mixin";
+.navigation-mobile-view {
+  display: none;
+
+  @include mobile {
+    max-width: 360px;
+    position: fixed;
+    opacity: 1;
+    overflow: hidden;
+    background-color: #fff;
+    width: 100%;
+    display: grid;
+    z-index: 70;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    box-shadow: 0px 0px 10px 0px #2b1816;
+    grid-template-rows: auto 1fr auto;
+    transform: translate3d(0, 0, 0);
+    transition-duration: 384ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    visibility: visible;
+  }
+  .title-header {
+    background-color: rgba(243, 244, 246);
+    align-content: center;
+    grid-auto-flow: column;
+    height: 3.5rem;
+    display: grid;
+    z-index: 10;
+    position: relative;
+    grid-auto-columns: 3.5rem;
+    grid-auto-rows: 3.5rem;
+    grid-template-columns: 3.5rem 1fr 3.5rem;
+    .title {
+      grid-column-start: 2;
+      text-align: left;
+      margin-top: 1.4rem;
+      font-weight: bold;
+    }
+    .close {
+      grid-column-start: 3;
+      margin-top: 1.4rem;
+    }
+  }
+  .navigation-body {
+    position: relative;
+    opacity: 1;
+    overflow: auto;
+    min-height: 0px;
+    transition-duration: 192ms;
+    transition-property: opacity, visibility;
+    visibility: visible;
+    transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+
+    .category {
+      ul {
+        li {
+          border-bottom: 1px solid rgb(209, 213, 219);
+          margin-left: 1.25rem;
+          margin-right: 1.25rem;
+          height: 4rem;
+          line-height: 64px;
+          a {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+  .navigation-footer {
+    gap: 0.75rem;
+    align-items: stretch;
+    grid-auto-flow: column;
+    height: 4rem;
+    display: grid;
+    margin-left: 1.5rem;
+    .account {
+      align-items: baseline;
+      display: flex;
+      gap: 11px;
+      padding-top: 13px;
+      justify-content: left;
+    }
+    .signIn {
+      align-items: flex-start;
+      text-align: right;
+      padding-right: 16px;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+  }
+}

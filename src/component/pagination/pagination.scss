@@ -1,0 +1,20 @@
+.pagenation {
+  width: 100%;
+  #page-numbers {
+    display: flex;
+    text-align: center;
+    width: 20%;
+    margin: 0 auto;
+    li {
+      display: block;
+      border: 1px solid rgba(255, 255, 255, 0.922);
+      padding: 10px;
+      cursor:pointer;
+      transition: opacity 0.5s;
+      opacity: 1;
+      &.active {
+        text-decoration: underline;
+      }
+    }
+  }
+}

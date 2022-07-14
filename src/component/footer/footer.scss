@@ -1,0 +1,111 @@
+@import "../../scss/mixin";
+footer {
+  font-size: 0.875rem;
+  padding-top: 4rem;
+  border-top: 2px solid rgba(243, 244, 246);
+  border-bottom: 2px solid rgba(243, 244, 246);
+  row-gap: 4rem;
+  color: #545d63;
+  max-width: 1440px;
+  width: 100%;
+  min-height: 15rem;
+  display: grid;
+  margin: 0 auto;
+  .footer-links {
+    row-gap: 2rem;
+    column-gap: 1.5rem;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    padding-left: 5rem;
+    padding-right: 5rem;
+    grid-auto-flow: row dense;
+    display: grid;
+    @include mobile {
+      row-gap: 1rem;
+      display: block;
+      padding-left: 1rem;
+    }
+    .footer-linkgroup {
+      grid-column: span 3 / span 3;
+      gap: 1rem;
+      align-content: flex-start;
+      display: grid;
+      padding-bottom: 10px;
+      li {
+        &:first-child {
+          font-weight: 600;
+          font-size: 16px;
+        }
+        .social-icon {
+          display: flex;
+          .social {
+            height: 20px;
+            width: 25px;
+            margin: 0 26.5px 0 0;
+            &.icon-instagram {
+              background: url(../../assets/images/instagram.svg) no-repeat;
+              background-size: contain;
+            }
+            &.icon-facebook {
+              background: url(../../assets/images/facebook.svg) no-repeat;
+              background-size: contain;
+            }
+            &.icon-twitter {
+              background: url(../../assets/images/twitter.svg) no-repeat;
+              background-size: contain;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-branding {
+    text-align: left;
+    justify-self: center;
+    padding: 0 1.5rem 0 1.5rem;
+    gap: 0px;
+    color: #545d63;
+    grid-auto-flow: column;
+    height: 4rem;
+    border-top: 2px solid rgba(243, 244, 246);
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: auto;
+    width: 100%;
+    display: grid;
+    grid-template-areas: "a b c";
+    @include mobile {
+      display: block;
+      padding: 19px 0 0px 0;
+      height: 6rem;
+    }
+    .footer-legal {
+      justify-content: flex-end;
+      @include mobile {
+        justify-content: center;
+      }
+      gap: 1rem;
+      align-items: center;
+      grid-auto-flow: column;
+      display: grid;
+      grid-area: c;
+    }
+    .footer-copyright {
+      text-align: center;
+      grid-area: b;
+      @include mobile {
+        width: 48%;
+        margin: 0 auto;
+      }
+    }
+    .footer-logo {
+      height: 18px;
+      width: 102px;
+      justify-content: left;
+      grid-area: a;
+      background: url(../../assets/images/logo.svg) no-repeat;
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+}

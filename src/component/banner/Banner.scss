@@ -1,0 +1,85 @@
+@import "../../scss/mixin";
+.banner {
+  width: 100%;
+
+  margin-top: 33px;
+  @include mobile {
+    margin: 0;
+  }
+  .banner-content {
+    display: flex;
+    width: 88%;
+    max-width: 1440px;  
+    margin: 0 auto;
+    @include mobile {
+      position: relative;
+      width: 100%;
+    }
+    .banner-text {
+      background-color: rgb(27, 37, 44);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0px;
+      height: 352px;
+      padding: 5rem;
+      text-align: center;
+      width: 31%;
+      font-size: 37px;
+      color: #ffffff;
+      align-items: center;
+      h3 {
+        font-size: 48px;
+        height: 121px;
+        @include mobile {
+          font-size: 36px;
+          height: 103px;
+        }
+      }
+      .banner-border {
+        background: #1f39ff 0% 0% no-repeat padding-box;
+        width: 102px;
+        height: 8px;
+        justify-content: center;
+        margin: 0 auto;
+      }
+      @include mobile {
+        position: absolute;
+        width: fit-content;
+        min-width: 150px;
+        max-width: 328px;
+        text-align: center;
+        align-items: center;
+        height: 171px;
+        top: 35%;
+        flex-flow: wrap;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 41px;
+    }
+    
+    
+    }
+    .banner-img {
+      align-self: center;
+      border-width: 1px;
+      border-style: none;
+      border-image: initial;
+      border-radius: 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-top: 16px;
+      height: 320px;
+      padding: 0px;
+      width: 65.6667%;
+      @include mobile {
+        width: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+    }
+  }
+}

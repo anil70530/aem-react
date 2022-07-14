@@ -1,0 +1,277 @@
+@import "../../scss/mixin";
+.productCart-wrapper {
+  display: flex;
+  width: 100%;
+  margin-top: 50px;
+  @include mobile {
+    display: contents;
+  }
+  .prod-payment {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 435px;
+    .product-detail {
+      
+      .product-title {
+        border-bottom: 2px solid #eee;
+        padding-left: 5px;
+        padding-right: 5px;
+        height: 30px;
+      }
+      .product-price-bill {
+        grid-template-rows: repeat(1, minmax(0, 1fr));
+        display: grid;
+        row-gap: 10px;
+        padding: 16px 0 20px 0;
+        .product-price-list {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          display: grid;
+          .pro-price {
+            text-align: right;
+          }
+        }
+      }
+    }
+    .product-action {
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      display: grid;
+      gap: 24px;
+      width: 199px;
+      margin: 0 auto;
+      .btn-paypal {
+        width: 100%;
+        background-color: #ffffff;
+        img {
+          width: 100%;
+          height: 40px;
+          cursor: pointer;
+        }
+      }
+      .btn-payment {
+        min-height: 2rem;
+        min-width: 8rem;
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+        color: rgb(255, 255, 255);
+        line-height: 1.25;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 0.875rem;
+        text-align: center;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        background-color: rgb(41, 84, 255);
+        border: 2px solid rgb(41, 84, 255);
+        border-radius: 9999px;
+        align-self: center;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        max-width: 100%;
+        display: inline-flex;
+        pointer-events: auto;
+        transition-duration: 256ms;
+        transition-property: background-color, border-color, color;
+        transition-timing-function: var(--venia-global-anim-standard);
+        height: 40px;
+      }
+    }
+  }
+}
+.productCart {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+  .productCart-heading {
+    text-align: center;
+    margin-top: 33px;
+    h1 {
+      font-size: 48px;
+      @include mobile {
+        font-size: 35px;
+      }
+    }
+    .cart-border {
+      width: 102px;
+      background-color: #1f39ff;
+      height: 8px;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      margin: 10px auto;
+      @include mobile {
+        margin-top: 20px;
+      }
+    }
+  }
+  .product-cart-detail {
+    width: 98%;
+    min-width: 770px;
+    padding-bottom: 10px;
+    @include mobile {
+      min-width: auto;
+    }
+    .product-container {
+      grid-template-columns: minmax(17.5%, 166px) minmax(31.25%, 603px) auto;
+      display: grid;
+      @include mobile {
+        grid-template-columns: minmax(0%, 120px) minmax(31.25%, 603px) auto;
+        gap: 0.5rem;
+      }
+      gap: 2rem;
+      justify-content: center;
+
+      border: 1px solid #eeee;
+      .product-image {
+        border: 1px solid #eee;
+        max-width: 166px;
+        max-height: 200px;
+        background-color: #ffffff;
+        @include mobile {
+          max-width: 100px;
+          max-height: 120px;
+        }
+        img {
+          height: 183px;
+          padding: 5px;
+          width: 100%;
+          border-radius: 10px;
+          @include mobile {
+            max-width: 100px;
+            max-height: 120px;
+          }
+        }
+      }
+
+      .product-detail {
+        @include mobile{
+          grid-template-columns: repeat(2,1fr);
+          display: grid;
+        }
+        .product-title {
+          grid-template-rows: repeat(1, minmax(0, 1fr));
+          display: grid;
+          padding-top: 10px;
+          @include mobile {
+            font-size: 18px;
+          }
+        }
+        .action-event{
+          display: none;
+         @include mobile{
+          display: inline;
+          text-align: right;
+          font-size: 36px;
+         }
+        }
+        .product-wrapper {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          display: grid;
+          padding-top: 20px;
+          @include mobile {
+            grid-template-columns: none;
+            grid-template-rows: repeat(2, minmax(0, 1fr));
+            display: grid;
+          }
+          .product-vareation {
+            .prodinfo {
+              padding: 5px;
+            }
+          }
+          .product-qty {
+            padding-top: 20px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            @include mobile {
+              padding-top: 5px;
+            }
+          }
+          .product-action {
+            @include mobile {
+              display: none;
+            }
+            .product-edit {
+              display: flex;
+              column-gap: 8px;
+              padding: 5px;
+              cursor: pointer;
+              .edit-item {
+                display: block;
+                width: 16px;
+                height: 16px;
+                background: url(../../assets/images/edit.svg) no-repeat;
+                background-size: contain;
+              }
+              .remove-item {
+                display: block;
+                width: 16px;
+                height: 16px;
+                background: url(../../assets/images/trash.svg) no-repeat;
+                background-size: contain;
+              }
+              .save-item {
+                display: block;
+                width: 16px;
+                height: 16px;
+                background: url(../../assets/images/fev.svg);
+                background-size: contain;
+              }
+            }
+          }
+        }
+      }
+    }
+    .message-detail {
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .product-offer {
+    border: 1px solid #d1d3d6;
+    width: 98%;
+    @include mobile {
+      width: 100%;
+    }
+    border-radius: 2px;
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    margin-bottom: 20px;
+    .product-assibility {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      @include mobile{
+        grid-template-rows: repeat(3, minmax(0, 1fr));
+        grid-template-columns: none;
+      }
+      display: grid;
+      border: 1px solid #d1d3d6;
+      padding: 10px;
+      .offer-title {
+        grid-column-start: 1;
+        @include mobile{
+          grid-row-start: 1;
+        }
+        color: #172026;
+      }
+      .offer-shipping {
+        text-align: right;
+        grid-column-start: 3;
+        @include mobile{
+          text-align: left;
+          grid-column-start:1 ;
+        }
+        color: #172026;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        .toggle-arrow {
+          float: right;
+          transform: rotate(90deg);
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}
+.n-b {
+  font-weight: 600;
+}
