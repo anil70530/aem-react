@@ -27,12 +27,15 @@ const Header = (props) => {
           </nav>
           <div className="header-secondary">
             <div className="right-nav">
-              <span className="icon-search"></span>
+            <span className="icon-search"></span>
+              <Link to="/">
               <span className="search">Search</span>
+              </Link>
+              
             </div>
             <div className="right-nav">
               <span className="icon-signIn"></span>
-              <span className="signIn">Sign In</span>
+              <Link to="/"><span className="signIn">Sign In</span></Link>
             </div>
             <div className="right-nav">
               <Link to="/cart">

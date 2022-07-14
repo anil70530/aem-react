@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./productDetail.scss";
 import { useParams } from 'react-router-dom';
-import { connect } from 'react-redux/es/exports';
+import { connect } from 'react-redux';
 import { getProductById, addCart,decreaseItem } from '../../store/action';
 import ProductQty from '../../component/quantity/ProductQty';
 import currencyFormat from '../../utils/currency';

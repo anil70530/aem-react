@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./footer.scss";
 export const Footer = () => {
   return (
@@ -6,18 +7,18 @@ export const Footer = () => {
       <div className="footer-links">
         <ul className="footer-linkgroup">
           <li>Sign In</li>
-          <li>Register</li>
-          <li>Order Status</li>
+          <li><Link to="/">Register</Link></li>
+          <li><Link to="/">Order Status</Link></li>
         </ul>
         <ul className="footer-linkgroup">
           <li>About Us</li>
-          <li>Our Story</li>
-          <li>Careers</li>
+          <li><Link to="/">Our Story</Link></li>
+          <li><Link to="/">Careers</Link></li>
         </ul>
         <ul className="footer-linkgroup">
           <li>Help</li>
-          <li>Contact Us</li>
-          <li>Returns</li>
+          <li><Link to="/">Contact Us</Link></li>
+          <li><Link to="/">Returns</Link></li>
         </ul>
         <ul className="footer-linkgroup">
           <li>Follow Us!</li>
@@ -27,17 +28,17 @@ export const Footer = () => {
           </li>
           <li>
             <div className="social-icon">
-              <div className="social icon-instagram"></div>
-              <div className="social icon-facebook"></div>
-              <div className="social icon-twitter"></div>
+              <Link to="/"><div className="social icon-instagram"></div></Link>
+              <Link to="/"><div className="social icon-facebook"></div></Link>
+              <Link to="/"><div className="social icon-twitter"></div></Link>
             </div>
           </li>
         </ul>
       </div>
       <div className="footer-branding"> 
          <ul className="footer-legal">
-             <li>Terms of use</li>
-             <li>Privacy Policy</li>
+             <li><Link to="/">Terms of use</Link> </li>
+             <li><Link to="/">Privacy Policy</Link></li>
          </ul>
          <p className="footer-copyright">© Company Name Address Ave, City Name, State ZIP</p>
          <div className="footer-logo"></div>

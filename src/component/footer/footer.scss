@@ -55,6 +55,9 @@ footer {
             }
           }
         }
+        a{
+          color:#545d63 ;
+        }
       }
     }
   }
@@ -88,6 +91,9 @@ footer {
       grid-auto-flow: column;
       display: grid;
       grid-area: c;
+      a{
+        color:#545d63 ;
+      }
     }
     .footer-copyright {
       text-align: center;
