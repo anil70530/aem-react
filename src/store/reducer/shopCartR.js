@@ -13,9 +13,10 @@ const cartReducer = (state = initialState, action) => {
             let addedItem = action.data
             let existed_item = state.addedItems.find(item => action['data'].id === item.id)
             if (existed_item) {
+                
                 let res = state.addedItems.map(result => { return { ...result } });
                 let getIndex = res.findIndex(item => action['data'].id === item.id)
-                let quantity = action['data'].quantity+1;
+                let quantity = action['data'].quantity;
                 let itemList= {...state.addedItems[getIndex], quantity};
                 return {
                     ...state,

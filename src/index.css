@@ -1,5 +1,5 @@
 @import url("https://use.typekit.net/aga0gbp.css");
-*{
+*,::before, ::after {
   box-sizing: border-box;
     border-width: 0;
     border-style: solid;
@@ -8,12 +8,7 @@
     padding: 0;
     font-family: muli,sans-serif;
   }
-  *, ::before, ::after {
-    box-sizing: border-box;
-    border-width: 0;
-    border-style: solid;
-    border-color: currentColor;
-}
+
   main{
     width: 100%;
     max-width: 1440px;

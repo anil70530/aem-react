@@ -6,7 +6,7 @@ export default class ProductQty extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      quantity: 1,
+      quantity: props.quantity||1,
       show: true,
       max: 5,
       min: 0
@@ -63,7 +63,7 @@ export default class ProductQty extends Component {
             </button>
             <span className='filedIcon'>
               <span className='filedIcon-input'>
-                <input aria-label='Item quantity' inputMode='numric' min="1" pattern="[0-9]" className="quanityStripper" name="quantity" value={this.state.quantity} onChange={this.handleChange}></input>
+                <input aria-label='Item quantity' inputMode='numric' min="1" pattern="[0-9]" className="quanityStripper" name="quantity" value={this.props.quantity>1?this.state.quantity> this.props.quantity?this.state.quantity:this.props.quantity:this.state.quantity} onChange={this.handleChange}></input>
               </span>
             </span>
             <button className='incress-qty' onClick={() => this.IncrementItem()}>

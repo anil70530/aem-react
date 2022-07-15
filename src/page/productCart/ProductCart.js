@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 
 const ProductCart = (props) => {
   const { addedItems, total } = props.cart;
+  
   return (
     <section className='productCart'>
       <div className='productCart-heading'>
@@ -53,7 +54,7 @@ const ProductCart = (props) => {
           </div>
         </section>
         <section>
-          <Payment totalPrice={total} />
+          <Payment  totalPrice={total} />
         </section>
       </div>
 
