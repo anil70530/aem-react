@@ -10,6 +10,7 @@ import { getProduct, getProductCategory,getProductBySortASC,getProductBySortDESC
 const ProductList = (props) => {
   const [searchData, setSearch] = useState("");
   const [sort,setSort]=useState('asc');
+ 
 
 
 
@@ -18,7 +19,7 @@ const ProductList = (props) => {
     props.getProduct();
     props.getProductCategory();
     
-  },[]);
+  },[props]);
 
   const handlerCategory = (event) => {
     setSearch(event);
