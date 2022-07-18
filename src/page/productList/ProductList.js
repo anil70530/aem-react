@@ -19,7 +19,7 @@ const ProductList = (props) => {
     props.getProduct();
     props.getProductCategory();
     
-  },[props]);
+  },[]);
 
   const handlerCategory = (event) => {
     setSearch(event);

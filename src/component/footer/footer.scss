@@ -68,7 +68,7 @@ footer {
     gap: 0px;
     color: #545d63;
     grid-auto-flow: column;
-    height: 4rem;
+    height: 2.125rem;
     border-top: 2px solid rgba(243, 244, 246);
     justify-items: center;
     align-items: center;
@@ -105,7 +105,8 @@ footer {
     }
     .footer-logo {
       height: 18px;
-      width: 102px;
+      max-width: 102px;
+      width: 50%;
       justify-content: left;
       grid-area: a;
       background: url(../../assets/images/logo.svg) no-repeat;
