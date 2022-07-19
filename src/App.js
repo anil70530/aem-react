@@ -19,9 +19,9 @@ function App() {
       <main>
     
         <Routes>
-          <Route path='/' element={<ProductList />}></Route>
-          <Route path='/detail/:id' element={<ProductDetail />}></Route>
-          <Route path='/cart' element={<ProductCart />}></Route>
+          <Route exact path='aem-react/' element={<ProductList />}></Route>
+          <Route path='aem-react/detail/:id' element={<ProductDetail />}></Route>
+          <Route path='aem-react/cart' element={<ProductCart />}></Route>
         </Routes>
         
       </main>
