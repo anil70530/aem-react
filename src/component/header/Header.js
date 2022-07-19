@@ -38,7 +38,7 @@ const Header = (props) => {
               <Link to="aem-react/"><span className="signIn">Sign In</span></Link>
             </div>
             <div className="right-nav">
-              <Link to="/cart">
+              <Link to="aem-react/cart">
                 <span className="icon-busket">
                   {addedItems.length > 0 && (<span className="icon-badge">{addedItems.length}</span>
                   )}
