@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./productDetail.scss";
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getProductById, addCart, decreaseItem } from '../../store/action';
 import ProductQty from '../../component/quantity/ProductQty';
@@ -21,23 +21,24 @@ const ProductDetail = (props) => {
   const [size, setSize] = useState();
   const { id } = useParams();
   const [param, setParam] = useState();
+  const [isAction,setIsAction]=useState("Add");
   const { addedItems } = props.cart;
   useEffect(() => {
     if (param !== id) {
       props.getProductById(id);
       setParam(id);
-      
-    }else{
-      if(addedItems.length){
-          let data=addedItems.find((res)=>res.id===id);
-          setQty(data?.quantity||0);
+
+    } else {
+      if (addedItems.length) {
+        let data = addedItems.find((res) => res.id === id);
+        setQty(data?.quantity || 0);
 
       }
-     
+
     }
 
 
-  }, [props, id, param,addedItems])
+  }, [props, id, param, addedItems])
 
 
   const handleColor = (color) => {
@@ -47,24 +48,40 @@ const ProductDetail = (props) => {
     setSize(size);
   }
   const { productItemId } = props["product"];
-  
+
   const { title, image, description, price, rating } = productItemId || [];
   const addToCart = async () => {
-    const data = {
-      id: id,
-      image: image,
-      price: price,
-      title: title,
-      quantity: qty + 1,
-      color: color,
-      size: size
+    if(isAction!=="Increment"){
+      const data = {
+        id: id,
+        image: image,
+        price: price,
+        title: title,
+        quantity: qty+1,
+        color: color,
+        size: size
+      }
+      await props.addCart(data);
+      setQty(qty+1);
+    }else{
+      const data = {
+        id: id,
+        image: image,
+        price: price,
+        title: title,
+        quantity: qty,
+        color: color,
+        size: size
+      }
+      await props.addCart(data);
+      setQty(qty);
     }
-    await props.addCart(data);
-    setQty(qty + 1);
+ 
   }
   const handleQuntity = (qty) => {
-    setQty(prevState => prevState = qty['quantity']);
-    addToCart();
+    setQty(qty['quantity']);
+    setIsAction("Increment");
+     addToCart();
   }
   const decreaseQantity = async (event) => {
     const data = {
@@ -137,8 +154,9 @@ const ProductDetail = (props) => {
           )}
         </div>
         <p className='product-discription'>
-          {description}
+          {description.split(' ').slice(0,11).join(' ')}&nbsp;<span><u><Link to="/aem-react/">Read more</Link></u></span>
         </p>
+       
       </section>
       <section className='product-option'>
         <div className='option'>
@@ -172,15 +190,18 @@ const ProductDetail = (props) => {
           </div>
         </div>
       </section>
-      {qty >= 1 && (<section className='quantity'>
+      <section className='quantity'>
         <div className='quantity-title'>Quantity</div>
         <ProductQty quantity={qty} decrQuantity={decreaseQantity} onQuantity={(event) => handleQuntity(event)} />
-      </section>)}
-      <section className='action'>
-        <button className='btn-add-cart' onClick={addToCart} disabled={qty >= 1}>
-          Add To cart
-        </button>
       </section>
+      <Link to="/aem-react/cart">
+        <section className='action'>
+          <button className='btn-add-cart' onClick={addToCart}>
+            Add To cart
+          </button>
+        </section>
+      </Link>
+
       <section className='product-action-share'>
         <div className='product-fev'>
           <img src={fev} alt="save" /> Save
@@ -226,7 +247,7 @@ const ProductDetail = (props) => {
     </div>
   )
 }
-const mapStateToProps = ({ product,cart }) => ({
+const mapStateToProps = ({ product, cart }) => ({
   product,
   cart
 });

@@ -1,8 +1,8 @@
-@import"../../scss/mixin";
+@import "../../scss/mixin";
 
 .productfulldetail {
-  @include mobile{
-     display: contents;
+  @include mobile {
+    display: contents;
   }
   grid-template-areas:
     "images breadcram"
@@ -42,29 +42,29 @@
 
       grid-template-rows: auto;
       display: grid;
-       
-      @include mobile{
+
+      @include mobile {
         grid-template-columns: none;
-        gap:0;
+        gap: 0;
         position: relative;
       }
       .curousel-contenter {
         grid-area: main;
         grid-template-columns: repeat(3, 1fr);
         display: grid;
-       
+
         .curousel-imgContainer {
           grid-area: 1 / 1 / 2 / 4;
           position: relative;
           background-color: #f3f4f6;
           height: 680px;
-          @include mobile{
+          @include mobile {
             height: 480px;
           }
           img {
             width: 100%;
             height: 680px;
-            @include mobile{
+            @include mobile {
               height: 480px;
               padding: 0 15px;
             }
@@ -72,7 +72,7 @@
         }
       }
       .curousel-thumbnailList {
-        @include mobile{
+        @include mobile {
           display: none;
         }
         align-content: flex-start;
@@ -100,15 +100,15 @@
               width: 100%;
               height: 7.35rem;
             }
-            &.active{
+            &.active {
               border-bottom: 4px solid rgb(55 63 255);
             }
           }
         }
       }
-      .curousel-slider{
+      .curousel-slider {
         display: none;
-        @include mobile{
+        @include mobile {
           display: flex;
           position: absolute;
           width: 100px;
@@ -119,19 +119,17 @@
           margin-left: auto;
           margin-right: auto;
         }
-        .slider{
-          border-radius:50%;
-          width:10px;
+        .slider {
+          border-radius: 50%;
+          width: 10px;
           height: 10px;
           margin-left: 10px;
-          background-color: #FFFFFF;
-          &.active{
-            background-color: #DFE1E2;
+          background-color: #ffffff;
+          &.active {
+            background-color: #dfe1e2;
           }
         }
-
       }
-
     }
   }
   .breadcram {
@@ -148,7 +146,7 @@
     line-height: 1.5;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid #D1D3D6;
+    border-bottom: 2px solid #d1d3d6;
     gap: 0.5rem;
     align-items: center;
     display: grid;
@@ -168,6 +166,19 @@
     }
     .product-discription {
       font-size: 16px;
+      font-size: 16px;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      height: 46px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box !important;
+      position: relative;
+     
+      span{
+            position: absolute;
+            
+      }
     }
   }
   .product-option {
@@ -178,7 +189,7 @@
       padding-bottom: 1.5rem;
       margin-left: 1.5rem;
       margin-right: 1.5rem;
-      @include mobile{
+      @include mobile {
         margin-left: 1rem;
         margin-right: 1rem;
       }
@@ -233,14 +244,14 @@
             background-repeat: no-repeat;
             background-size: 100% 100%;
           }
-          &.active{
-            border: 1px solid #FFFFFF;
+          &.active {
+            border: 1px solid #ffffff;
             box-shadow: 0px 4px 4px 1px #9596a2a8;
           }
         }
         .switch-size {
-          border: 2px solid #91959C;
-          
+          border: 2px solid #91959c;
+
           line-height: 1;
           text-align: center;
           padding-top: 0px;
@@ -258,7 +269,7 @@
           pointer-events: auto;
           margin-left: 15px;
           background-color: transparent;
-          &.active{
+          &.active {
             border: 1px solid #d06363;
             box-shadow: 0px 4px 4px 1px #9596a2a8;
           }
@@ -285,7 +296,7 @@
     padding-bottom: 1rem;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
-    @include mobile{
+    @include mobile {
       justify-content: center;
       text-align: center;
       align-items: center;
@@ -325,10 +336,10 @@
     gap: 10px;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
-    @include mobile{
+    @include mobile {
       text-align: center;
-    justify-content: center;
-    align-items: center;
+      justify-content: center;
+      align-items: center;
     }
     .product-fev {
       display: flex;
@@ -352,14 +363,14 @@
     padding-left: 1.5rem;
     align-self: stretch;
     margin: 0px;
-    h3{
+    h3 {
       padding: 30px 0 23px 0;
       line-height: 25px;
     }
     .product-container {
       display: flex;
       .product-description {
-         display: grid;
+        display: grid;
         .product-heading {
           line-height: 1.5;
           font-weight: 600;
@@ -373,10 +384,9 @@
           letter-spacing: 1px;
         }
       }
-     
     }
   }
-   .product-detail {
+  .product-detail {
     align-self: stretch;
     margin-top: 76px;
     padding-left: 1.5rem;
@@ -389,19 +399,18 @@
       align-items: center;
       margin-bottom: 1.5rem;
       color: #172026;
-      
     }
-    .product-feature{
+    .product-feature {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      display:grid;
-      gap:10px;
+      display: grid;
+      gap: 10px;
       margin-top: 25px;
-      span{
+      span {
         display: flex;
         align-items: center;
         column-gap: 10px;
-        img{
-          width:24px
+        img {
+          width: 24px;
         }
       }
     }
