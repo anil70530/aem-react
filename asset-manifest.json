@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/aem-react/static/css/main.7810c420.css",
+    "main.js": "/aem-react/static/js/main.073062c0.js",
+    "static/js/787.f2a33aed.chunk.js": "/aem-react/static/js/787.f2a33aed.chunk.js",
+    "static/media/banner.png": "/aem-react/static/media/banner.5ceb8d48f6f33a4ebf0d.png",
+    "static/media/sliders.svg": "/aem-react/static/media/sliders.07a0e59562aded129aac7c8a5259c413.svg",
+    "static/media/logo.svg": "/aem-react/static/media/logo.9f93e443f2c002a982e1.svg",
+    "static/media/trash.svg": "/aem-react/static/media/trash.a3e697fde0ae7e80f40a.svg",
+    "static/media/instagram.svg": "/aem-react/static/media/instagram.098205e681981cff2dea.svg",
+    "index.html": "/aem-react/index.html",
+    "static/media/user.svg": "/aem-react/static/media/user.36f9dff636796a3645348ee7f29f2509.svg",
+    "static/media/search.svg": "/aem-react/static/media/search.d9388588132a09c360a9.svg",
+    "static/media/arrow-up.svg": "/aem-react/static/media/arrow-up.bffb5a388e9ce654e32b9665d1dbed6d.svg",
+    "static/media/arrow-down.svg": "/aem-react/static/media/arrow-down.ad1e372bfba7126beaef93d275515815.svg",
+    "static/media/twitter.svg": "/aem-react/static/media/twitter.3d9f31115be6b897b5d4.svg",
+    "static/media/fev.svg": "/aem-react/static/media/fev.eac0e393d74c75448ec712b9241aadd7.svg",
+    "static/media/busket.svg": "/aem-react/static/media/busket.4dd442d142f5707136a6.svg",
+    "static/media/bar-icon.svg": "/aem-react/static/media/bar-icon.5dcc5d8b88ca070686b85b8dcfffe965.svg",
+    "static/media/edit.svg": "/aem-react/static/media/edit.d86fb5c57c99ad0d8312.svg",
+    "static/media/facebook.svg": "/aem-react/static/media/facebook.b5b54c5572636785078a.svg",
+    "static/media/plus.svg": "/aem-react/static/media/plus.b442d586663449abff571aaef96abbe8.svg",
+    "static/media/close.svg": "/aem-react/static/media/close.cffbd2ba0ae96263557c355d4fe30c89.svg",
+    "static/media/chevron-right.svg": "/aem-react/static/media/chevron-right.ee59aa22b6bf156e0eb4aea386711bbf.svg",
+    "static/media/minus-disable.svg": "/aem-react/static/media/minus-disable.123a4add4cfe9bca2a68a88ddb2bcc9c.svg",
+    "static/media/max-width_header.svg": "/aem-react/static/media/max-width_header.d30ba2b6fe6342e03d09.svg",
+    "main.7810c420.css.map": "/aem-react/static/css/main.7810c420.css.map",
+    "main.073062c0.js.map": "/aem-react/static/js/main.073062c0.js.map",
+    "787.f2a33aed.chunk.js.map": "/aem-react/static/js/787.f2a33aed.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7810c420.css",
+    "static/js/main.073062c0.js"
+  ]
+}
