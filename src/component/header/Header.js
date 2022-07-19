@@ -20,22 +20,22 @@ const Header = (props) => {
          
           <div className="header-logo"></div>
           <nav className="header-menu">
-            <Link to="/"><div className="header-menu-title">Women</div></Link>
-            <Link to="/"><div className="header-menu-title">Men</div></Link>
-            <Link to="/"><div className="header-menu-title">Smart Gear</div></Link>
-            <Link to="/"><div className="header-menu-title">Accessories</div></Link>
+            <Link to="aem-react/"><div className="header-menu-title">Women</div></Link>
+            <Link to="aem-react/"><div className="header-menu-title">Men</div></Link>
+            <Link to="aem-react/"><div className="header-menu-title">Smart Gear</div></Link>
+            <Link to="aem-react/"><div className="header-menu-title">Accessories</div></Link>
           </nav>
           <div className="header-secondary">
             <div className="right-nav">
             <span className="icon-search"></span>
-              <Link to="/">
+              <Link to="aem-react/">
               <span className="search">Search</span>
               </Link>
               
             </div>
             <div className="right-nav">
               <span className="icon-signIn"></span>
-              <Link to="/"><span className="signIn">Sign In</span></Link>
+              <Link to="aem-react/"><span className="signIn">Sign In</span></Link>
             </div>
             <div className="right-nav">
               <Link to="/cart">

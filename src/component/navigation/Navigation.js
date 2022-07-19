@@ -17,10 +17,10 @@ export const Navigation = (props) => {
                     <nav className="navigation-body" >
                         <div className='category'>
                             <ul className='category-tree'>
-                                <li><Link to="/"><div className="header-menu-title">Women</div></Link></li>
-                                <li><Link to="/"><div className="header-menu-title">Men</div></Link></li>
-                                <li><Link to="/"><div className="header-menu-title">Smart Gear</div></Link></li>
-                                <li><Link to="/"><div className="header-menu-title">Accessories</div></Link></li>
+                                <li><Link to="aem-react/"><div className="header-menu-title">Women</div></Link></li>
+                                <li><Link to="aem-react/"><div className="header-menu-title">Men</div></Link></li>
+                                <li><Link to="aem-react/"><div className="header-menu-title">Smart Gear</div></Link></li>
+                                <li><Link to="aem-react/"><div className="header-menu-title">Accessories</div></Link></li>
                             </ul>
 
 
