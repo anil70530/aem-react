@@ -11,7 +11,7 @@ export const ProductCard = (props) => {
   
   return (
     <>
-     <Link to={`aem-react/detail/${props.detail.id}`}>
+     <Link to={`detail/${props.detail.id}`}>
      <div className="item">
         <div className="item-image">
           <img

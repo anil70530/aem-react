@@ -219,7 +219,6 @@
               display: grid;
               max-width: 319px;
               max-height: 480px;
-              border: 1px solid #eee;
               @include mobile {
                 width: 100%;
                 max-width: 164px;
