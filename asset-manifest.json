@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/aem-react/static/css/main.a2e3994c.css",
-    "main.js": "/aem-react/static/js/main.84681d7a.js",
+    "main.css": "/aem-react/static/css/main.0a744c7f.css",
+    "main.js": "/aem-react/static/js/main.ae887a4d.js",
     "static/js/787.f2a33aed.chunk.js": "/aem-react/static/js/787.f2a33aed.chunk.js",
     "static/media/banner.png": "/aem-react/static/media/banner.5ceb8d48f6f33a4ebf0d.png",
     "static/media/sliders.svg": "/aem-react/static/media/sliders.07a0e59562aded129aac7c8a5259c413.svg",
@@ -24,12 +24,12 @@
     "static/media/chevron-right.svg": "/aem-react/static/media/chevron-right.ee59aa22b6bf156e0eb4aea386711bbf.svg",
     "static/media/minus-disable.svg": "/aem-react/static/media/minus-disable.123a4add4cfe9bca2a68a88ddb2bcc9c.svg",
     "static/media/max-width_header.svg": "/aem-react/static/media/max-width_header.d30ba2b6fe6342e03d09.svg",
-    "main.a2e3994c.css.map": "/aem-react/static/css/main.a2e3994c.css.map",
-    "main.84681d7a.js.map": "/aem-react/static/js/main.84681d7a.js.map",
+    "main.0a744c7f.css.map": "/aem-react/static/css/main.0a744c7f.css.map",
+    "main.ae887a4d.js.map": "/aem-react/static/js/main.ae887a4d.js.map",
     "787.f2a33aed.chunk.js.map": "/aem-react/static/js/787.f2a33aed.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a2e3994c.css",
-    "static/js/main.84681d7a.js"
+    "static/css/main.0a744c7f.css",
+    "static/js/main.ae887a4d.js"
   ]
 }
