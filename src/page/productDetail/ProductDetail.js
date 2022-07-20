@@ -99,7 +99,8 @@ const ProductDetail = (props) => {
     setSelected(item);
   }
   return (
-    <div className='productfulldetail'>
+    <>
+      {productItemId&&(<div className='productfulldetail'>
       <section className='productFullDetail-imageCurousel'>
         <div className='curousel'>
           <div className='curousel-contenter'>
@@ -244,7 +245,10 @@ const ProductDetail = (props) => {
         </div>
 
       </section>
-    </div>
+    </div>)}
+    
+    </>
+  
   )
 }
 const mapStateToProps = ({ product, cart }) => ({

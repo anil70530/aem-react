@@ -1,6 +1,7 @@
 import React from 'react'
 import paypal from "../../assets/images/PP_BTN.png";
 import currencyFormat from '../../utils/currency';
+import { FiLock } from "react-icons/fi";
 export const Payment = (props) => {
     
     return (
@@ -37,7 +38,9 @@ export const Payment = (props) => {
             
             </div>
              <div className='product-action'>
-                <button className='btn-payment'>Checkout</button>
+                <button className='btn-payment'>
+                <FiLock/>
+                Checkout</button>
                  <button className='btn-paypal'>
                     <img src={paypal} alt="payment" />
                  </button>

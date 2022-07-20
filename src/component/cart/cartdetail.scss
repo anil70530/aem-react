@@ -12,7 +12,6 @@
     padding: 10px;
     max-width: 435px;
     .product-detail {
-      
       .product-title {
         border-bottom: 2px solid #eee;
         padding-left: 5px;
@@ -54,7 +53,6 @@
         outline: 2px solid transparent;
         outline-offset: 2px;
         color: rgb(255, 255, 255);
-        line-height: 1.25;
         text-transform: uppercase;
         font-weight: 700;
         font-size: 0.875rem;
@@ -69,12 +67,13 @@
         align-items: center;
         cursor: pointer;
         max-width: 100%;
-        display: inline-flex;
+        gap: 3px;
         pointer-events: auto;
         transition-duration: 256ms;
         transition-property: background-color, border-color, color;
         transition-timing-function: var(--venia-global-anim-standard);
         height: 40px;
+        display: flex;
       }
     }
   }
@@ -145,8 +144,8 @@
       }
 
       .product-detail {
-        @include mobile{
-          grid-template-columns: repeat(2,1fr);
+        @include mobile {
+          grid-template-columns: repeat(2, 1fr);
           display: grid;
         }
         .product-title {
@@ -157,13 +156,13 @@
             font-size: 18px;
           }
         }
-        .action-event{
+        .action-event {
           display: none;
-         @include mobile{
-          display: inline;
-          text-align: right;
-          font-size: 36px;
-         }
+          @include mobile {
+            display: inline;
+            text-align: right;
+            font-size: 36px;
+          }
         }
         .product-wrapper {
           grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -240,7 +239,7 @@
     margin-bottom: 20px;
     .product-assibility {
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      @include mobile{
+      @include mobile {
         grid-template-rows: repeat(3, minmax(0, 1fr));
         grid-template-columns: none;
       }
@@ -249,7 +248,7 @@
       padding: 10px;
       .offer-title {
         grid-column-start: 1;
-        @include mobile{
+        @include mobile {
           grid-row-start: 1;
         }
         color: #172026;
@@ -257,9 +256,9 @@
       .offer-shipping {
         text-align: right;
         grid-column-start: 3;
-        @include mobile{
+        @include mobile {
           text-align: left;
-          grid-column-start:1 ;
+          grid-column-start: 1;
         }
         color: #172026;
         grid-template-columns: repeat(2, minmax(0, 1fr));

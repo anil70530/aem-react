@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { Footer } from './component/footer/Footer';
 import  Header  from './component/header/Header';
 import ProductList from './page/productList/ProductList';

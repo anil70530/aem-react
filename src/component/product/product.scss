@@ -108,7 +108,7 @@
           padding-left: 1rem;
           .filter-sidebar-header {
             justify-content: space-between;
-            display: flex;
+            display: grid;
             padding-bottom: 1rem;
             border-bottom: 2px solid rgba(209, 213, 219);
             h2 {
@@ -116,6 +116,29 @@
               font-size: 1.25rem;
               align-items: center;
               display: flex;
+            }
+            .current-filter{
+              grid-template-columns: repeat(2, minmax(0, 1fr));
+              display: grid;
+              gap:10px;
+              li{
+                border: 1px solid ;
+                padding: 10px;
+                border-radius: 0.375rem;
+                background-color: rgba(55, 65, 81,1);
+                color: #FFFFFF;
+                display: flex;
+                text-align: center;
+                align-items: center;
+                gap:10px;
+                font-size: 13px;
+
+              }
+               
+            }
+            .clearall{
+              font-size: 12px;
+              margin-top: 20px;
             }
           }
           .filter-sidebar-blocks {

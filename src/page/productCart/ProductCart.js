@@ -4,6 +4,7 @@ import { Payment } from '../../component/payment/Payment';
 import arrow from '../../assets/images/chevron-right.svg'
 import { connect } from 'react-redux';
 
+
 const ProductCart = (props) => {
   const { addedItems, total } = props.cart;
   

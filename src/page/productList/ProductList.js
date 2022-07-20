@@ -8,11 +8,8 @@ import { ProductFilter } from "../../component/product/ProductFilter";
 import { ProductSorting } from "../../component/product/ProductSorting";
 import { getProduct, getProductCategory,getProductBySortASC,getProductBySortDESC } from "../../store/action";
 const ProductList = (props) => {
-  const [searchData, setSearch] = useState("");
+  const [searchData, setSearch] = useState([]);
   const [sort,setSort]=useState('asc');
- 
-
-
 
   useEffect(() => {
    
@@ -22,7 +19,9 @@ const ProductList = (props) => {
   },[]);
 
   const handlerCategory = (event) => {
-    setSearch(event);
+   console.log(event);
+   setSearch(event);
+  
   };
   
   const getSortProduct = (item) => {
@@ -52,11 +51,11 @@ const ProductList = (props) => {
       <article className="category">
         <div className="category-wrapper">
           <div className="category-sidebar">
-            <ProductFilter
+            {(productCategory.length?true:false) && <ProductFilter
               category={productCategory || []}
               handlerCategory={(event) => handlerCategory(event)}
-
-            />
+              filterData={searchData}
+            />}
           </div>
           <div className="category-content">
             <section>

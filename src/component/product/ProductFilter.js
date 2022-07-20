@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export const ProductFilter = (props) => {
-  const [checked, setChecked] = React.useState("");
-  const checkHandler=(e)=>{
-    let myCheckbox=document.getElementsByName("myCheckbox");
-    Array.prototype.forEach.call(myCheckbox,(el)=>{
-      el.checked = false;
-    
-    });
-    setChecked(e.target.value);
-     props.handlerCategory(e.target.value)
-  }
+  const [categoryList, setCategory] = useState([]);
 
+  const checkHandler = (e) => {
+    let data = { ...e, isActive: !e.isActive }
+    setCategory(categoryList.map((content) => content.name === e.name ? { ...content, ...data } : content))
+    props.handlerCategory(e.name);
+  }
+  useEffect(() => {
+    let data = props.category.map(res => { return { name: res, isActive: false } })
+    setCategory(data);
+  }, [])
+  const clearAll = () => {
+    setCategory(categoryList.map((content) =>{return{...content, isActive:false}}));
+
+  }
+  const onCategorySelected = (item) => {
+    checkHandler(item);
+  }
 
   return (
     <>
@@ -20,25 +27,32 @@ export const ProductFilter = (props) => {
           <div className="filter-sidebar-header">
             <h2>Filters</h2>
             <ul className="current-filter">
-              <li></li>
+              {categoryList.filter((res) => res.isActive === true).map((res, index) => (<li key={index}>
+                <span onClick={() => onCategorySelected(res)}>
+                  X
+                </span>
+                <span>
+                  {res.name}
+                </span>
+              </li>))}
             </ul>
+            {categoryList.filter((res) => res.isActive === true).length ? (<span onClick={clearAll} className="clearall"><u>Clear All</u></span>) : ""}
           </div>
 
           <div className="category-title">Category</div>
           <ul className="filter-sidebar-blocks">
             {
-              (props.category||[]).map((category,idx)=>(<li key={idx}>
-                <div className="filter-sidebar-item">
-                 
-                  <input type="checkbox" value={category} name="myCheckbox" className="checkbox" onChange={(e)=>checkHandler(e)} checked={category === checked}/> {category}
 
-                 
+              (categoryList || []).map((item, idx) => (<li key={idx}>
+                <div className="filter-sidebar-item">
+
+                  <input type="checkbox" value={item.name} name="myCheckbox" className="checkbox" checked={item.isActive} onChange={() => checkHandler(item)} /> {item.name}
                 </div>
               </li>))
             }
           </ul>
           <div className="category-title">Color</div>
-           <ul className="attr-color">
+          <ul className="attr-color">
             <li className="btn btn-black "></li>
             <li className="btn btn-white "></li>
             <li className="btn btn-darkGreen "></li>
@@ -49,7 +63,7 @@ export const ProductFilter = (props) => {
             <li className="btn btn-pink"></li>
             <li className="btn btn-orange"></li>
             <li className="btn btn-rainbow"></li>
-           </ul>
+          </ul>
         </div>
       </aside>
     </>
