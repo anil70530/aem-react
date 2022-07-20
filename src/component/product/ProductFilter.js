@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from "react";
-
+import chackboxChecked from "../../assets/images/checked.png";
 export const ProductFilter = (props) => {
   const [categoryList, setCategory] = useState([]);
 
   const checkHandler = (e) => {
-    let data = { ...e, isActive: !e.isActive }
-    setCategory(categoryList.map((content) => content.name === e.name ? { ...content, ...data } : content))
-    props.handlerCategory(e.name);
+    let data = { ...e, isActive: !e.isActive };
+    let selectdIsActiveItem = categoryList.map((content) => content.name === e.name ? { ...content, ...data } : content)
+    setCategory(selectdIsActiveItem)
+
+    props.handlerCategory(selectdIsActiveItem.filter(res => res.isActive === true));
   }
   useEffect(() => {
     let data = props.category.map(res => { return { name: res, isActive: false } })
     setCategory(data);
   }, [])
   const clearAll = () => {
-    setCategory(categoryList.map((content) =>{return{...content, isActive:false}}));
+    setCategory(categoryList.map((content) => { return { ...content, isActive: false } }));
 
   }
   const onCategorySelected = (item) => {
@@ -28,7 +30,7 @@ export const ProductFilter = (props) => {
             <h2>Filters</h2>
             <ul className="current-filter">
               {categoryList.filter((res) => res.isActive === true).map((res, index) => (<li key={index}>
-                <span onClick={() => onCategorySelected(res)}>
+                <span onClick={() => onCategorySelected(res)} className="close">
                   X
                 </span>
                 <span>
@@ -45,8 +47,8 @@ export const ProductFilter = (props) => {
 
               (categoryList || []).map((item, idx) => (<li key={idx}>
                 <div className="filter-sidebar-item">
-
-                  <input type="checkbox" value={item.name} name="myCheckbox" className="checkbox" checked={item.isActive} onChange={() => checkHandler(item)} /> {item.name}
+                {item.isActive?<img src={chackboxChecked} alt=""/>:<label htmlFor={idx} className="checkbox"></label>}
+                  <input type="checkbox" value={item.name} name="myCheckbox" id={idx} checked={item.isActive} onChange={() => checkHandler(item)} /> {item.name}
                 </div>
               </li>))
             }

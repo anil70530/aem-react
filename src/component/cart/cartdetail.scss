@@ -8,15 +8,15 @@
   }
   .prod-payment {
     border: 1px solid #eee;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 2px;
+    padding: 32px;
     max-width: 435px;
     .product-detail {
       .product-title {
-        border-bottom: 2px solid #eee;
-        padding-left: 5px;
+        padding-left: 0px;
         padding-right: 5px;
         height: 30px;
+        font-size: 18px;
       }
       .product-price-bill {
         grid-template-rows: repeat(1, minmax(0, 1fr));
@@ -112,20 +112,19 @@
       min-width: auto;
     }
     .product-container {
-      grid-template-columns: minmax(17.5%, 166px) minmax(31.25%, 603px) auto;
+      grid-template-columns: minmax(0.5%, 144px) minmax(3.25%, 559px) auto;
       display: grid;
+      gap: 1rem;
+      justify-content: center;
+      border: 1px solid rgba(238, 238, 238, 0.9333333333);
       @include mobile {
         grid-template-columns: minmax(0%, 120px) minmax(31.25%, 603px) auto;
         gap: 0.5rem;
       }
-      gap: 2rem;
-      justify-content: center;
-
-      border: 1px solid #eeee;
+     
       .product-image {
-        border: 1px solid #eee;
         max-width: 166px;
-        max-height: 200px;
+        max-height: 199px;
         background-color: #ffffff;
         @include mobile {
           max-width: 100px;
@@ -152,6 +151,8 @@
           grid-template-rows: repeat(1, minmax(0, 1fr));
           display: grid;
           padding-top: 10px;
+          color: #172026;
+       
           @include mobile {
             font-size: 18px;
           }
@@ -167,7 +168,7 @@
         .product-wrapper {
           grid-template-columns: repeat(3, minmax(0, 1fr));
           display: grid;
-          padding-top: 20px;
+          padding-top: 8px;
           @include mobile {
             grid-template-columns: none;
             grid-template-rows: repeat(2, minmax(0, 1fr));
@@ -176,6 +177,7 @@
           .product-vareation {
             .prodinfo {
               padding: 5px;
+              color: #172026;
             }
           }
           .product-qty {
@@ -188,6 +190,7 @@
             }
           }
           .product-action {
+             padding-left: 70px;
             @include mobile {
               display: none;
             }
@@ -195,11 +198,12 @@
               display: flex;
               column-gap: 8px;
               padding: 5px;
+              font-size: 12px;
               cursor: pointer;
               .edit-item {
                 display: block;
-                width: 16px;
-                height: 16px;
+                width: 14px;
+                height: 17px;
                 background: url(../../assets/images/edit.svg) no-repeat;
                 background-size: contain;
               }

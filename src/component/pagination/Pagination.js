@@ -8,10 +8,11 @@ export default class Pagination extends Component {
         super();
         this.state = {
             sort:"asc",
-            searchItem: "",
+            searchItem: [],
             productData: [],
             currentPage: 1,
-            todosPerPage: 12
+            todosPerPage: 12,
+            filterData:[]
         };
         this.handleClick = this.handleClick.bind(this);
     }
@@ -23,15 +24,21 @@ export default class Pagination extends Component {
     }
     componentDidUpdate(prevProps,prevState){
           if(prevProps.search!==this.props.search){
+           
+            let searchDataFilter=[];
+            this.props.search.map((item)=>{
+            let data= this.props.data.filter((res) => res.category?.toLowerCase()===item?.toLowerCase()).map(res => res);
+            searchDataFilter=searchDataFilter.concat(data)
+            });
             this.setState({
                 searchItem:this.props.search,
-                productData:this.props.data.filter((res) => res.category?.toLowerCase().includes(this.props.search?.toLowerCase())).map(res => res),
+                productData:searchDataFilter,
                 currentPage:1
               })
           }
           
           if((prevProps.data.length!==this.props.data.length) ||  (prevState.productData.length!== this.state.productData.length) || (this.props.sort!==this.state.sort)){
-            if(this.state.searchItem===""){
+            if(this.state.searchItem.length===0){
                 this.setState({
                     sort:this.props.sort,
                     productData:this.props.data

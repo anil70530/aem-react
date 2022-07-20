@@ -12,16 +12,12 @@ const ProductList = (props) => {
   const [sort,setSort]=useState('asc');
 
   useEffect(() => {
-   
     props.getProduct();
     props.getProductCategory();
-    
   },[]);
 
   const handlerCategory = (event) => {
-   console.log(event);
-   setSearch(event);
-  
+   setSearch(event.map(res=>res.name));
   };
   
   const getSortProduct = (item) => {
