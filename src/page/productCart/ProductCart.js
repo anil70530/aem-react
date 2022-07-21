@@ -21,7 +21,7 @@ const ProductCart = (props) => {
           {addedItems && addedItems.map((res, idx) => (<CartDetail data={res} key={idx} />))}
           {addedItems.length === 0 && (<div className='product-cart-detail'>
             <div className='message-detail'>
-              No Cart Availible
+             Your cart is empty
             </div>
           </div>)}
           <div className='product-offer'>

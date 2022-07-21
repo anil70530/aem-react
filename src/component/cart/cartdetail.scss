@@ -82,6 +82,7 @@
   width: 90%;
   max-width: 1440px;
   margin: 0 auto;
+  color: #172026;
   .productCart-heading {
     text-align: center;
     margin-top: 33px;
@@ -188,11 +189,30 @@
             @include mobile {
               padding-top: 5px;
             }
+            .product-quantity{
+              @include mobile{
+                grid-template-columns: auto 5.5625rem auto;
+              }
+            }
           }
           .product-action {
              padding-left: 70px;
+             position: relative;
             @include mobile {
               display: none;
+            }
+            &.active-action{
+              @include mobile{
+                right: 36px;
+                display: block;
+                position: absolute;
+                width: 202px;
+                top: 226px;
+                z-index: 999;
+                background: #FFF;
+                border-radius: 10px;
+                box-shadow: 8px 9px 13px 3px #c2c0c0;
+              }
             }
             .product-edit {
               display: flex;

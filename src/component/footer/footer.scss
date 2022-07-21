@@ -79,12 +79,13 @@ footer {
     @include mobile {
       display: block;
       padding: 19px 0 0px 0;
-      height: 6rem;
+      height: 12rem;
     }
     .footer-legal {
       justify-content: flex-end;
       @include mobile {
         justify-content: center;
+        padding-bottom:25px ;
       }
       gap: 1rem;
       align-items: center;
@@ -111,7 +112,8 @@ footer {
       grid-area: a;
       background: url(../../assets/images/logo.svg) no-repeat;
       @include mobile {
-        display: none;
+        display: grid;
+        margin: 38px auto  38px auto;
       }
     }
   }

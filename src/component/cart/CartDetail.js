@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import { addCart, deleteItem,decreaseItem } from '../../store/action';
 import currencyFormat from '../../utils/currency';
@@ -6,7 +6,7 @@ import ProductQty from '../quantity/ProductQty'
 import "./cartdetail.scss";
 
 const CartDetail = (props) => {
-
+const [isSideActive,setIsSideActive]=useState(false);
   const { id, image, title, price, quantity,color,size } = props['data'];
   const remove = async (id) => {
     let item = {
@@ -14,7 +14,9 @@ const CartDetail = (props) => {
     }
     await props.deleteItem(item)
   }
-
+   const actionClick=()=>{
+    setIsSideActive(!isSideActive);
+   }
   const addQuantity = async (event) => {
     const data = {
       id: id,
@@ -49,7 +51,7 @@ const CartDetail = (props) => {
         </div>
         <div className='product-detail'>
           <h3 className='product-title'>{title}</h3>
-           <span className='action-event'>...</span>
+           <span className='action-event' onClick={actionClick}>...</span>
           <div className='product-wrapper'>
             <div className='product-vareation'>
               <p className='prodinfo product-size'>Size:{size}</p>
@@ -59,7 +61,7 @@ const CartDetail = (props) => {
             <div className='product-qty'>
               <ProductQty quantity={quantity}  decrQuantity={decreaseQantity} onQuantity={addQuantity} key={id}/>
             </div>
-            <div className='product-action'>
+            <div className={`product-action ${isSideActive?"active-action":""}`}>
               <div className='product-edit' >
                 <span className='edit-item'></span>Edit item
               </div>
