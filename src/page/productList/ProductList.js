@@ -10,6 +10,7 @@ import { getProduct, getProductCategory,getProductBySortASC,getProductBySortDESC
 const ProductList = (props) => {
   const [searchData, setSearch] = useState([]);
   const [sort,setSort]=useState('asc');
+  const [total,setTotal]=useState(0);
 
   useEffect(() => {
     props.getProduct();
@@ -36,13 +37,16 @@ const ProductList = (props) => {
     setSort(e);
     getSortProduct(e);
   }
+  const getTotalRecord=(data)=>{
+    setTotal(data)
+  }
  
   return (
     <>
       <Banner />
       <div className="category-top">
         <Breadcrumbs />
-        <ProductSorting data={(productItem || []).length} handleSort={(e)=>sortingEvent(e)} />
+        <ProductSorting data={total} handleSort={(e)=>sortingEvent(e)} />
       </div>
       <article className="category">
         <div className="category-wrapper">
@@ -55,7 +59,7 @@ const ProductList = (props) => {
           </div>
           <div className="category-content">
             <section>
-                    <Pagination data={productItem} search={searchData} sort={sort} />
+                    <Pagination data={productItem} search={searchData} sort={sort} totalRecord={getTotalRecord} />
             </section>
           </div>
         </div>

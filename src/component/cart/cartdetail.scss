@@ -116,7 +116,7 @@
       display: grid;
       gap: 1rem;
       justify-content: center;
-      border: 1px solid rgba(238, 238, 238, 0.9333333333);
+     
       @include mobile {
         grid-template-columns: minmax(0%, 120px) minmax(31.25%, 603px) auto;
         gap: 0.5rem;

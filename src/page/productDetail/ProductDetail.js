@@ -79,8 +79,8 @@ const ProductDetail = (props) => {
  
   }
   const handleQuntity = (qty) => {
-    setQty(qty['quantity']);
-    setIsAction("Increment");
+      setQty(qty['quantity']);
+      setIsAction("Increment");
      addToCart();
   }
   const decreaseQantity = async (event) => {
@@ -101,6 +101,12 @@ const ProductDetail = (props) => {
   return (
     <>
       {productItemId&&(<div className='productfulldetail'>
+      <section className='breadcram-mobile'>
+        <div className='bradcram-wrapper'>
+          Clothing / Women’s / Outerwear
+        </div>
+
+      </section>
       <section className='productFullDetail-imageCurousel'>
         <div className='curousel'>
           <div className='curousel-contenter'>
@@ -148,7 +154,7 @@ const ProductDetail = (props) => {
           {rating != null && (
             <>
               <Rate rating={rating["rate"] || 0}></Rate>
-              <span>({rating["count"] || 0})
+              <span>(<u>{rating["count"] || 0}</u>)
 
               </span>
             </>
@@ -185,7 +191,7 @@ const ProductDetail = (props) => {
             <button type='button' className={`switch-size ${size === 'L' ? 'active' : ''}`} onClick={() => handleSize('L')}>
               L
             </button>
-            <button type='button' className={`switch-size ${color === 'XL' ? 'active' : ''}`} onClick={() => handleSize('XL')}>
+            <button type='button' className={`switch-size ${size === 'XL' ? 'active' : ''}`} onClick={() => handleSize('XL')}>
               XL
             </button>
           </div>
@@ -205,10 +211,10 @@ const ProductDetail = (props) => {
 
       <section className='product-action-share'>
         <div className='product-fev'>
-          <img src={fev} alt="save" /> Save
+        <Link to="/"> <img src={fev} alt="save" /> Save</Link>
         </div>
         <div className='product-share'>
-          <BiShareAlt />Share
+        <Link to="/"><BiShareAlt />Share</Link>  
         </div>
       </section>
       <section className='product-full-detail'>
@@ -245,6 +251,7 @@ const ProductDetail = (props) => {
         </div>
 
       </section>
+       <div className='branding'></div>
     </div>)}
     
     </>

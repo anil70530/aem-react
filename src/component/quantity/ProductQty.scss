@@ -7,6 +7,7 @@
     justify-content: flex-start;
     @include mobile{
       justify-content: center;
+      grid-template-columns: auto 10.5625rem auto;
     }
     align-items: center;
     display: grid;

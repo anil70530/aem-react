@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import chackboxChecked from "../../assets/images/checked.png";
+import { BsCheck2Square } from "react-icons/bs";
 export const ProductFilter = (props) => {
   const [categoryList, setCategory] = useState([]);
 
@@ -7,7 +7,6 @@ export const ProductFilter = (props) => {
     let data = { ...e, isActive: !e.isActive };
     let selectdIsActiveItem = categoryList.map((content) => content.name === e.name ? { ...content, ...data } : content)
     setCategory(selectdIsActiveItem)
-
     props.handlerCategory(selectdIsActiveItem.filter(res => res.isActive === true));
   }
   useEffect(() => {
@@ -47,7 +46,7 @@ export const ProductFilter = (props) => {
 
               (categoryList || []).map((item, idx) => (<li key={idx}>
                 <div className="filter-sidebar-item">
-                {item.isActive?<img src={chackboxChecked} alt=""/>:<label htmlFor={idx} className="checkbox"></label>}
+                {item.isActive?<label className="checkbox-checked" htmlFor={idx}><BsCheck2Square /></label>:<label htmlFor={idx} className="checkbox"></label>}
                   <input type="checkbox" value={item.name} name="myCheckbox" id={idx} checked={item.isActive} onChange={() => checkHandler(item)} /> {item.name}
                 </div>
               </li>))

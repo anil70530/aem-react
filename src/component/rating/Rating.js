@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FaStar } from "react-icons/fa";
+import { FiStar } from "react-icons/fi";
 import { Container, Radio, Rating } from "./RatingStyles";
 const Rate=(props)=> {
     const [rate, setRate] = useState(props.rating);
@@ -18,11 +18,12 @@ const Rate=(props)=> {
               }}
             />
             <Rating>
-              <FaStar
-                color={
-                    ratingValue < rate || ratingValue === rate
+              <FiStar
+                color={"000"}
+                fill={
+                  ratingValue < rate || ratingValue === rate
                     ? "000"
-                    : "rgb(192,192,192)"
+                    : "rgb(255 255 255)"
                 }
               />
             </Rating>

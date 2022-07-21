@@ -1,7 +1,7 @@
 @import "../../scss/mixin";
 .category-top {
   width: 90%;
-  margin: 45px auto 35px auto;
+  margin: 32px auto 25px auto;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   display: grid;
   align-content: center;
@@ -138,7 +138,7 @@
                 align-items: center;
                 gap: 10px;
                 font-size: 13px;
-                .close{
+                .close {
                   cursor: pointer;
                   display: block;
                 }
@@ -147,6 +147,7 @@
             .clearall {
               font-size: 12px;
               margin-top: 20px;
+              cursor: pointer;
             }
           }
           .filter-sidebar-blocks {
@@ -162,16 +163,18 @@
               align-items: center;
               justify-self: start;
               position: relative;
-              label {
-                height: 24px;
-                width: 24px;
-                border: 2px solid #91959c;
-                border-radius: 3px;
+              .checkbox-checked {
+                svg{
+                  height: 24px;
+                  width: 24px;
+                  fill: #2a2cc7;
+                }
               }
               .checkbox {
                 height: 24px;
                 width: 24px;
                 border: 2px solid #91959c;
+                border-radius: 3px;
               }
               img {
                 width: 24px;
@@ -196,7 +199,6 @@
             &:empty {
               display: none;
             }
-           
           }
           .filter-siderbar-blocks {
             grid-template-columns: 100%;
@@ -263,6 +265,9 @@
     }
     .category-content {
       width: 75%;
+      @media mobile {
+        width: 100%;
+      }
       section {
         .gallery {
           line-height: 1;

@@ -18,7 +18,7 @@ const Header = (props) => {
 
           </div>
          
-          <div className="header-logo"></div>
+          <Link to="aem-react/"><div className="header-logo"></div></Link>
           <nav className="header-menu">
             <Link to="aem-react/"><div className="header-menu-title">Women</div></Link>
             <Link to="aem-react/"><div className="header-menu-title">Men</div></Link>

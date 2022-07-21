@@ -37,8 +37,8 @@ export const Footer = () => {
       </div>
       <div className="footer-branding"> 
          <ul className="footer-legal">
-             <li><Link to="aem-react/">Terms of use</Link> </li>
-             <li><Link to="aem-react/">Privacy Policy</Link></li>
+             <li><Link to="aem-react/"><u>Terms of use</u></Link> </li>
+             <li><Link to="aem-react/"><u>Privacy Policy</u></Link></li>
          </ul>
          <p className="footer-copyright">© Company Name Address Ave, City Name, State ZIP</p>
          <div className="footer-logo"></div>

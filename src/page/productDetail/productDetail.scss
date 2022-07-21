@@ -134,6 +134,22 @@
   }
   .breadcram {
     grid-area: breadcram;
+    @include mobile {
+      display: none;
+    }
+    .bradcram-wrapper {
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+      font-size: 14px;
+    }
+  }
+  .breadcram-mobile {
+    grid-area: breadcram;
+    display: none;
+    @include mobile {
+      display: inline;
+      margin: 1.5rem;
+    }
     .bradcram-wrapper {
       margin-left: 1.5rem;
       margin-right: 1.5rem;
@@ -174,19 +190,19 @@
       text-overflow: ellipsis;
       display: -webkit-box !important;
       position: relative;
-     
-      span{
-            position: absolute;
-            
+
+      span {
+        position: absolute;
       }
     }
   }
   .product-option {
     grid-area: options;
+    margin-left: 0.5rem;
 
     .option {
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
       margin-left: 1.5rem;
       margin-right: 1.5rem;
       @include mobile {
@@ -197,10 +213,12 @@
         line-height: 1.5;
         font-weight: 600;
         display: block;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
       }
       .tile-list {
         grid-template-columns: repeat(auto-fit, minmax(3rem, max-content));
+        display: grid;
+        gap: 1rem;
         .switch-color {
           border: 1px solid #fee1d2;
           line-height: 1;
@@ -216,9 +234,8 @@
           min-width: 3rem;
           width: 4rem;
           height: 2.5rem;
-          display: inline-flex;
+
           pointer-events: auto;
-          margin-left: 15px;
 
           &.switch01 {
             background-image: url(../../assets/images/Swatch01.png);
@@ -263,15 +280,14 @@
           align-items: center;
           cursor: pointer;
           min-width: 3rem;
-          width: 3rem;
-          height: 3rem;
+          width: 4rem;
+          height: 2.5rem;
           display: inline-flex;
           pointer-events: auto;
-          margin-left: 15px;
           background-color: transparent;
           &.active {
-            border: 1px solid #d06363;
-            box-shadow: 0px 4px 4px 1px #9596a2a8;
+            color: #FFFFFF;
+            background: #91959C;
           }
         }
       }
@@ -281,8 +297,8 @@
     grid-area: quantity;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
     .quantity-title {
       line-height: 1.5;
       font-weight: 600;
@@ -294,8 +310,8 @@
     grid-area: cart;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
     @include mobile {
       justify-content: center;
       text-align: center;
@@ -304,6 +320,9 @@
     .btn-add-cart {
       min-height: 2rem;
       min-width: 8rem;
+      @include mobile {
+        width: 311px;
+      }
       outline: 2px solid transparent;
       outline-offset: 2px;
       color: rgba(255, 255, 255);
@@ -312,8 +331,8 @@
       font-weight: 700;
       font-size: 0.875rem;
       text-align: center;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
       background-color: rgb(41 84 255);
       border: 2px solid rgb(41 84 255);
       border-radius: 9999px;
@@ -334,26 +353,33 @@
     grid-template-columns: 1fr;
     display: flex;
     gap: 10px;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
     @include mobile {
       text-align: center;
       justify-content: center;
       align-items: center;
     }
-    .product-fev {
+    a {
+      color: #172026;
+      text-align: center;
       display: flex;
-      text-align: left;
-      justify-content: left;
       gap: 10px;
       line-height: 20px;
-    }
-    .product-share {
-      gap: 10px;
-      display: flex;
-      line-height: 20px;
-      text-align: left;
-      justify-content: left;
+      .product-fev {
+        display: flex;
+        text-align: left;
+        justify-content: left;
+        gap: 10px;
+        line-height: 20px;
+      }
+      .product-share {
+        gap: 10px;
+        display: flex;
+        line-height: 20px;
+        text-align: left;
+        justify-content: left;
+      }
     }
   }
   .product-full-detail {
@@ -366,6 +392,9 @@
     h3 {
       padding: 30px 0 23px 0;
       line-height: 25px;
+      @include mobile {
+        text-align: center;
+      }
     }
     .product-container {
       display: flex;
@@ -377,6 +406,9 @@
           align-items: center;
           margin-bottom: 1.5rem;
           color: #172026;
+          @include mobile {
+            text-align: center;
+          }
         }
         p {
           color: #172026;
@@ -389,22 +421,32 @@
   .product-detail {
     align-self: stretch;
     margin-top: 76px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     grid-column: 2 / span 1;
     grid-row: fold / span 1;
+    text-align: left;
+    @include mobile {
+      margin: 24px 0 24px 0;
+      justify-content: center;
+      text-align: center;
+    }
     .product-heading {
       line-height: 1.5;
       font-weight: 600;
       align-items: center;
       margin-bottom: 1.5rem;
       color: #172026;
+      @include mobile {
+        text-align: center;
+      }
     }
     .product-feature {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       display: grid;
       gap: 10px;
       margin-top: 25px;
+      text-align: left;
       span {
         display: flex;
         align-items: center;
@@ -413,6 +455,19 @@
           width: 24px;
         }
       }
+    }
+  }
+  .branding {
+    width: 102px;
+    height: 8px;
+    background: #1f39ff 0% 0% no-repeat padding-box;
+    grid-column: 1/span 1;
+    margin-left: 1.5rem;
+    align-self: stretch;
+    
+    @include mobile{
+      margin: 0 auto;
+      margin-bottom: 2.5rem;
     }
   }
 }

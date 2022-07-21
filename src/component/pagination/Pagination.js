@@ -12,7 +12,8 @@ export default class Pagination extends Component {
             productData: [],
             currentPage: 1,
             todosPerPage: 12,
-            filterData:[]
+            filterData:[],
+            isPageActive:1
         };
         this.handleClick = this.handleClick.bind(this);
     }
@@ -27,14 +28,15 @@ export default class Pagination extends Component {
            
             let searchDataFilter=[];
             this.props.search.map((item)=>{
-            let data= this.props.data.filter((res) => res.category?.toLowerCase()===item?.toLowerCase()).map(res => res);
-            searchDataFilter=searchDataFilter.concat(data)
+            let data= this.props.data.filter((res) => res.category?.toLowerCase()===item?.toLowerCase()).map(res => {return res});
+            return searchDataFilter=searchDataFilter.concat(data)
             });
             this.setState({
                 searchItem:this.props.search,
                 productData:searchDataFilter,
                 currentPage:1
-              })
+              });
+              this.props.totalRecord(searchDataFilter.length);
           }
           
           if((prevProps.data.length!==this.props.data.length) ||  (prevState.productData.length!== this.state.productData.length) || (this.props.sort!==this.state.sort)){
@@ -42,7 +44,8 @@ export default class Pagination extends Component {
                 this.setState({
                     sort:this.props.sort,
                     productData:this.props.data
-                })
+                });
+                this.props.totalRecord(this.props.data.length);
             }
            
           }
@@ -51,7 +54,8 @@ export default class Pagination extends Component {
    
     handleClick(event) {
         this.setState({
-            currentPage: Number(event.target.id)
+            currentPage: Number(event.target.id),
+            isPageActive:Number(event.target.id)
         });
     }
    
@@ -75,6 +79,7 @@ export default class Pagination extends Component {
                     key={number}
                     id={number}
                     onClick={this.handleClick}
+                    className={this.state.isPageActive===number?'active':''}
                 >
                     {number}
                 </li>
