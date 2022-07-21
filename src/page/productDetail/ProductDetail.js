@@ -53,7 +53,6 @@ const ProductDetail = (props) => {
 
   const { title, image, description, price, rating } = productItemId || [];
   const addToCart = async () => {
-    debugger;
       const data = {
         id: id,
         image: image,
