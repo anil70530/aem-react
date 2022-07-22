@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./productDetail.scss";
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams,useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getProductById, addCart, decreaseItem } from '../../store/action';
 import ProductQty from '../../component/quantity/ProductQty';
@@ -15,7 +15,7 @@ import paper from "../../assets/images/paper.png";
 import sweetwick from "../../assets/images/sweet-wick.png";
 
 const ProductDetail = (props) => {
-
+const navigate=useNavigate();
   const [qty, setQty] = useState(0);
   const [slected, setSelected] = useState(1);
   const [color, setColor] = useState();
@@ -50,8 +50,8 @@ const ProductDetail = (props) => {
     setSize(size);
   }
   const { productItemId } = props["product"];
-
   const { title, image, description, price, rating } = productItemId || [];
+  
   const addToCart = async () => {
       const data = {
         id: id,
@@ -64,6 +64,7 @@ const ProductDetail = (props) => {
       }
       await props.addCart(data);
       setQty(qty + 1);
+      navigate("/aem-react/cart");
   }
   const handleQuntity = (qty) => {
     setQty(qty['quantity']-1);
@@ -213,20 +214,20 @@ const ProductDetail = (props) => {
           <div className='quantity-title'>Quantity</div>
           <ProductQty quantity={qty} decrQuantity={decreaseQantity} onQuantity={(event) => handleQuntity(event)} />
         </section>
-        <Link to="/aem-react/cart">
+       
           <section className='action'>
-            <button className='btn-add-cart' onClick={()=>addToCart('add')}>
+            <button className='btn-add-cart' onClick={()=>addToCart()}>
               Add To cart
             </button>
           </section>
-        </Link>
+        
 
         <section className='product-action-share'>
           <div className='product-fev'>
-            <Link to="/"> <img src={fev} alt="save" /> Save</Link>
+            <Link to="/aem-react/"> <img src={fev} alt="save" /> Save</Link>
           </div>
           <div className='product-share'>
-            <Link to="/"><BiShareAlt />Share</Link>
+            <Link to="/aem-react/"><BiShareAlt />Share</Link>
           </div>
         </section>
         <section className='product-full-detail'>

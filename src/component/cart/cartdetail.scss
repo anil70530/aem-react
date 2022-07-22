@@ -117,12 +117,12 @@
       display: grid;
       gap: 1rem;
       justify-content: center;
-     
+
       @include mobile {
         grid-template-columns: minmax(0%, 120px) minmax(31.25%, 603px) auto;
         gap: 0.5rem;
       }
-     
+
       .product-image {
         max-width: 166px;
         max-height: 199px;
@@ -147,13 +147,14 @@
         @include mobile {
           grid-template-columns: repeat(2, 1fr);
           display: grid;
+          position: relative;
         }
         .product-title {
           grid-template-rows: repeat(1, minmax(0, 1fr));
           display: grid;
           padding-top: 10px;
           color: #172026;
-       
+
           @include mobile {
             font-size: 18px;
           }
@@ -189,29 +190,50 @@
             @include mobile {
               padding-top: 5px;
             }
-            .product-quantity{
-              @include mobile{
+            .product-quantity {
+              @include mobile {
                 grid-template-columns: auto 5.5625rem auto;
               }
             }
           }
           .product-action {
-             padding-left: 70px;
-             position: relative;
+            padding-left: 70px;
+            position: relative;
             @include mobile {
               display: none;
             }
-            &.active-action{
-              @include mobile{
-                right: 36px;
+            &.active-action {
+              @include mobile {
+                left: 0px;
                 display: block;
                 position: absolute;
                 width: 202px;
-                top: 226px;
+                top: 32px;
                 z-index: 999;
-                background: #FFF;
+                background: #ffffff;
                 border-radius: 10px;
                 box-shadow: 8px 9px 13px 3px #c2c0c0;
+                padding-left: 40px;
+              }
+            }
+            .close {
+              display: none;
+              @include mobile {
+                display: block;
+                height: 30px;
+                width: 30px;
+                position: absolute;
+                top: -21px;
+                left: -16px;
+                font-size: 20px;
+                line-height: 21px;
+                border-radius: 50%;
+                background: #000;
+                color: #fff;
+                padding: 5px;
+                box-shadow: 10px 10px 10px 10px #fff;
+                text-align: center;
+            
               }
             }
             .product-edit {

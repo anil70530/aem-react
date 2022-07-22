@@ -6,7 +6,7 @@ import ProductQty from '../quantity/ProductQty'
 import "./cartdetail.scss";
 
 const CartDetail = (props) => {
-const [isSideActive,setIsSideActive]=useState(false);
+const [isSideActive,setIsSideActive]=useState(0);
   const { id, image, title, price, quantity,color,size } = props['data'];
   const remove = async (id) => {
     let item = {
@@ -14,8 +14,8 @@ const [isSideActive,setIsSideActive]=useState(false);
     }
     await props.deleteItem(item)
   }
-   const actionClick=()=>{
-    setIsSideActive(!isSideActive);
+   const actionClick=(id)=>{
+    setIsSideActive(id);
    }
   const addQuantity = async (event) => {
     const data = {
@@ -42,6 +42,9 @@ const [isSideActive,setIsSideActive]=useState(false);
     }
     await props.decreaseItem(data)
   }
+  const close=(item)=>{
+    setIsSideActive(item);
+  }
 
   return (
     <div className='product-cart-detail'>
@@ -51,7 +54,7 @@ const [isSideActive,setIsSideActive]=useState(false);
         </div>
         <div className='product-detail'>
           <h3 className='product-title'>{title}</h3>
-           <span className='action-event' onClick={actionClick}>...</span>
+           <span className='action-event' onClick={()=>actionClick(id)}>...</span>
           <div className='product-wrapper'>
             <div className='product-vareation'>
               <p className='prodinfo product-size'>Size:{size}</p>
@@ -61,7 +64,8 @@ const [isSideActive,setIsSideActive]=useState(false);
             <div className='product-qty'>
               <ProductQty quantity={quantity}  decrQuantity={decreaseQantity} onQuantity={addQuantity} key={id}/>
             </div>
-            <div className={`product-action ${isSideActive?"active-action":""}`}>
+            <div className={`product-action ${isSideActive===id?"active-action":id}`}>
+              <div className='close' onClick={()=>close(0)}>x</div>
               <div className='product-edit' >
                 <span className='edit-item'></span>Edit item
               </div>
