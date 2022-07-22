@@ -14,7 +14,6 @@
     grid-template-rows: repeat(3, minmax(0, 1fr));
     grid-template-columns: none;
     display: grid;
-    margin: 0px auto 24px auto;
   }
   .breadcrumbs {
     text-align: left;
@@ -265,7 +264,7 @@
     }
     .category-content {
       width: 75%;
-      @media mobile {
+      @include mobile {
         width: 100%;
       }
       section {
@@ -282,6 +281,7 @@
             grid-template-columns: repeat(3, 1fr);
             @include mobile {
               grid-template-columns: repeat(2, 1fr);
+              gap: 1rem;
             }
             .item {
               row-gap: 0.5rem;

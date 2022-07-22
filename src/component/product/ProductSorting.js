@@ -20,7 +20,7 @@ export const ProductSorting = (props) => {
   return (
     <>
       <div className="product-sort-filter">
-        <div className="filter-result">
+        <div className="filter-result" onClick={()=>props.handleFilter()}>
           <img src={slider} alt="filter" />
           Filter Result
         </div>
@@ -43,6 +43,7 @@ export const ProductSorting = (props) => {
           </select>
         </div>
       </div>
+      
     </>
   );
 };
