@@ -58,7 +58,7 @@ export default class ProductQty extends Component {
     return (
       <>
           <div className='product-quantity'>
-            <button className='decress-qty' onClick={() => this.DecreaseItem()} disabled={this.quantity === 1}>
+            <button className='decress-qty' onClick={() => this.DecreaseItem()} disabled={this.props.quantity<=1}>
               <img src={minus} alt="incress quantity" />
             </button>
             <span className='filedIcon'>

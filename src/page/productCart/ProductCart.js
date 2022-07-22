@@ -18,12 +18,15 @@ const ProductCart = (props) => {
       </div>
       <div className='productCart-wrapper'>
         <section>
+          <div className='productCart-Content'>
           {addedItems && addedItems.map((res, idx) => (<CartDetail data={res} key={idx} />))}
           {addedItems.length === 0 && (<div className='product-cart-detail'>
             <div className='message-detail'>
              Your cart is empty
             </div>
           </div>)}
+          </div>
+         
           <div className='product-offer'>
             <section className='product-assibility'>
               <div className='offer-title'>Estimate your Shipping</div>

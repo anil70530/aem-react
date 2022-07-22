@@ -33,6 +33,7 @@ const cartReducer = (state = initialState, action) => {
                 }
             }
         case DECREMENT_QTY:
+            debugger;
             let exi_item = state.addedItems.find(item => action['data'].id === item.id)
             if (exi_item) {
                 let res = state.addedItems.map(result => { return { ...result } });

@@ -310,7 +310,7 @@
   .action {
     grid-area: cart;
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
     margin-left: 2rem;
     margin-right: 2rem;
     @include mobile {
@@ -320,33 +320,36 @@
     }
     .btn-add-cart {
       min-height: 2rem;
-      min-width: 8rem;
+    min-width: 8rem;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    color: rgb(255, 255, 255);
+    /* line-height: 1.25; */
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-align: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-color: #1F39FF;
+    border: 2px solid #1F39FF;
+    border-radius: 28px;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    display: inline-flex;
+    pointer-events: auto;
+    transition-duration: 256ms;
+    transition-property: background-color, border-color, color;
+    transition-timing-function: var(--venia-global-anim-standard);
+    text-align: center;
+    max-width: 318px;
       @include mobile {
         width: 311px;
       }
-      outline: 2px solid transparent;
-      outline-offset: 2px;
-      color: rgba(255, 255, 255);
-      line-height: 1.25;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-size: 0.875rem;
-      text-align: center;
-      padding-left: 2rem;
-      padding-right: 2rem;
-      background-color: rgb(41 84 255);
-      border: 2px solid rgb(41 84 255);
-      border-radius: 9999px;
-      align-self: center;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      max-width: 100%;
-      display: inline-flex;
-      pointer-events: auto;
-      transition-duration: 256ms;
-      transition-property: background-color, border-color, color;
-      transition-timing-function: var(--venia-global-anim-standard);
+      
     }
   }
   .product-action-share {
@@ -354,13 +357,11 @@
     grid-template-columns: 1fr;
     display: flex;
     gap: 10px;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    @include mobile {
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-    }
+    // margin: 0 auto 0 auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  
     a {
       color: #172026;
       text-align: center;

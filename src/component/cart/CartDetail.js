@@ -18,6 +18,7 @@ const [isSideActive,setIsSideActive]=useState(0);
     setIsSideActive(id);
    }
   const addQuantity = async (event) => {
+    debugger;
     const data = {
       id: id,
       image: image,
@@ -30,7 +31,7 @@ const [isSideActive,setIsSideActive]=useState(0);
     await props.addCart(data)
   }
   const decreaseQantity=async(event)=>{
-    
+    debugger;
     const data = {
       id: id,
       image: image,

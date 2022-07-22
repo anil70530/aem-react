@@ -14,6 +14,7 @@
     grid-template-rows: repeat(3, minmax(0, 1fr));
     grid-template-columns: none;
     display: grid;
+    margin: 100px auto 25px auto;
   }
   .breadcrumbs {
     text-align: left;

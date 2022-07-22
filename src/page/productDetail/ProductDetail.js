@@ -50,8 +50,8 @@ const navigate=useNavigate();
     setSize(size);
   }
   const { productItemId } = props["product"];
-  const { title, image, description, price, rating } = productItemId || [];
-  
+  const { title, image, description, price, rating }  = productItemId || [];
+
   const addToCart = async () => {
       const data = {
         id: id,
@@ -66,10 +66,22 @@ const navigate=useNavigate();
       setQty(qty + 1);
       navigate("/aem-react/cart");
   }
-  const handleQuntity = (qty) => {
+  const handleQuntity = async(qty) => {
+    debugger;
+    const data = {
+      id: id,
+      image: image,
+      price: price,
+      title: title,
+      quantity: qty['quantity']-1,
+      color: color,
+      size: size
+    }
+    await props.addCart(data);
     setQty(qty['quantity']-1);
   }
   const decreaseQantity = async (event) => {
+    debugger;
     const data = {
       id: id,
       image: image,
